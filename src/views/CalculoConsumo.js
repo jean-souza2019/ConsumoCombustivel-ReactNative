@@ -23,25 +23,26 @@ export default function Home(props) {
         }
     }
 
+    const { kmsPorLitro } = props.route.params
+
     useEffect(() => {
         let nivelMedia;
-        const { kmsPorLitro } = props.route.params
-        setKmsPorLitroRecebido(kmsPorLitro)
 
-        if (kmsPorLitroRecebido <= 4) {
+        if (kmsPorLitro <= 4) {
             nivelMedia = "E"
-        } else if (kmsPorLitroRecebido > 4 && kmsPorLitroRecebido <= 8) {
+        } else if (kmsPorLitro > 4 && kmsPorLitro <= 8) {
             nivelMedia = "D"
-        } else if (kmsPorLitroRecebido > 8 && kmsPorLitroRecebido <= 10) {
+        } else if (kmsPorLitro > 8 && kmsPorLitro <= 10) {
             nivelMedia = "C"
-        } else if (kmsPorLitroRecebido > 10 && kmsPorLitroRecebido <= 12) {
+        } else if (kmsPorLitro > 10 && kmsPorLitro <= 12) {
             nivelMedia = "B"
-        } else if (kmsPorLitroRecebido > 12) {
+        } else if (kmsPorLitro > 12) {
             nivelMedia = "A"
         }
         
         setNivelConsumoRecebido(nivelMedia)
-    }, [])
+        setKmsPorLitroRecebido(kmsPorLitro)
+    }, [kmsPorLitro])
 
     return (
         <View style={styles.container}>

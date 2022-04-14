@@ -23,11 +23,7 @@ export default function App() {
         }}
       >
 
-        {
-          /*
-            em todas as telas(pages) é injetado na props a função navigation()
-          */
-        }
+        { }
         <Stack.Screen
           name="Home"
           component={Home}
